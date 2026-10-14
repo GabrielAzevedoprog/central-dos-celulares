@@ -180,5 +180,5 @@ export const ACESSORIOS: AccessoryProduct[] = [
   { id: 'acc-airpods', name: 'AirPods', category: 'Fone', detail: 'Estojo de carregamento', price: 249.99, installment: 'Parcelado sem juros', image: 'assets/acessorios/airpods-3.webp' },
   { id: 'acc-fone-samsung', name: 'Fone Samsung Type-C', category: 'Fone', detail: 'Type-C · Com microfone', price: 49.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/fone-samsung-type-c.webp' },
   { id: 'acc-agold-20w', name: 'Carregador α Gold Turbo 20W', category: 'Carregador', detail: 'USB-C · 6.1A', price: 39.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/carregador-agold-20w.webp' },
-  { id: 'acc-echo-dot-5', name: 'Echo Dot 5ª Geração', category: 'Caixa de Som', detail: 'Alexa · Controle por voz · Bluetooth', price: 349.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/echo-dot-5-geracao.webp' },
+  { id: 'acc-echo-dot-5', name: 'Echo Dot 5ª Geração', category: 'Caixa de Som', detail: 'Alexa · Controle por voz · Bluetooth', price: 399.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/echo-dot-5-geracao.webp' },
 ];
