@@ -168,7 +168,7 @@ export interface AccessoryProduct {
 
 export const ACESSORIOS: AccessoryProduct[] = [
   { id: 'acc-samsung-67w', name: 'Carregador Samsung 67W PD', category: 'Carregador', detail: 'Fonte 67W PD · Cabo USB-C incluso', price: 99.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/carregador-samsung-67w.webp' },
-  { id: 'acc-capa-17promax', name: 'Capa de Silicone iPhone 17 Pro Max', category: 'Capa', detail: 'Silicone · Vermelha', price: 19.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/capa-silicone-iphone-17-pro-max-vermelha.webp' },
+  { id: 'acc-capa-17promax', name: 'Capa de Silicone iPhone', category: 'Capa', detail: 'Silicone · Consultar Cores', price: 19.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/capa-silicone-iphone-17-pro-max-vermelha.webp' },
   { id: 'acc-capa-zcom-17pro', name: 'Capa Magnética ZCOM iPhone 17 Pro', category: 'Capa', detail: 'Carregamento sem fio · Magnética', price: 49.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/capa-magnetica-zcom-iphone-17-pro.webp' },
   { id: 'acc-capa-magsafe-17promax', name: 'Capa Transparente MagSafe iPhone 17 Pro Max', category: 'Capa', detail: 'Clear Case · Magnética', price: 29.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/capa-transparente-magsafe-iphone-17-pro-max.webp' },
   { id: 'acc-bateria-yd58', name: 'Bateria Portátil Magnética 10000mAh', category: 'Power Bank', detail: "H'Maston YD58 · Cabo embutido", price: 149.9, installment: 'Parcelado sem juros', image: 'assets/acessorios/bateria-portatil-hmaston-yd58.webp' },
