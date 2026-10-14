@@ -1,0 +1,56 @@
+<section id="destaque" class="featured">
+  <div class="container featured-panel">
+    <div class="featured-visual">
+      <div class="glow"></div>
+      <img
+        [src]="selectedColor().image"
+        [alt]="product.name + ' ' + selectedColor().label"
+        class="device-photo"
+        [class.is-swapping]="!imageVisible()"
+      />
+    </div>
+
+    <div class="featured-copy">
+      <span class="eyebrow">Em destaque nesta semana</span>
+      <h2 class="featured-title">{{ product.name }}</h2>
+      <p class="featured-desc">
+        O modelo topo de linha da Apple, lacrado.
+        Disponível pronta-entrega na cor {{ selectedColor().label }}, com garantia
+        da Central dos Celulares.
+      </p>
+
+      <div class="color-picker" role="group" aria-label="Escolher cor">
+        @for (c of colors; track c.id) {
+          <button
+            type="button"
+            class="color-swatch"
+            [class.active]="selectedColor().id === c.id"
+            [style.background]="c.swatch"
+            [attr.aria-label]="c.label"
+            [attr.aria-pressed]="selectedColor().id === c.id"
+            (click)="selectColor(c)"
+          ></button>
+        }
+        <span class="color-name">{{ selectedColor().label }}</span>
+      </div>
+
+      <dl class="spec-sheet">
+        @for (item of spec(); track item.label) {
+          <div class="spec-row">
+            <dt>{{ item.label }}</dt>
+            <dd>{{ item.value }}</dd>
+          </div>
+        }
+      </dl>
+
+      <div class="featured-price-row">
+        <div>
+          <p class="featured-from">A partir de</p>
+          <p class="price featured-price">{{ formatPrice(product.price) }}</p>
+          <p class="featured-installment">{{ product.installment }}</p>
+        </div>
+        <a href="#contato" class="btn btn-primary">Reservar este aparelho</a>
+      </div>
+    </div>
+  </div>
+</section>

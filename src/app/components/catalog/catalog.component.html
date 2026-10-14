@@ -1,0 +1,178 @@
+<section id="catalogo" class="catalog">
+  <div class="container">
+    <div class="catalog-head">
+      <h2 class="catalog-title">Nosso Catálogo</h2>
+
+      <div class="tabs" role="tablist" aria-label="Categorias do catálogo">
+        @for (t of tabs; track t) {
+          <button
+            class="tab"
+            role="tab"
+            [class.active]="active() === t"
+            [attr.aria-selected]="active() === t"
+            (click)="setTab(t)"
+          >
+            {{ t }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- APPLE: lacrados, com foto real -->
+    @if (active() === 'Apple') {
+      <p class="tab-sub">Todos lacrados, com garantia.</p>
+      <div class="grid photo-grid">
+        @for (p of apple; track p.id) {
+          <article class="card">
+            @if (p.tag) {
+              <span class="tag">{{ p.tag }}</span>
+            }
+            <div class="card-visual">
+              <img [src]="p.image" [alt]="p.name + ' ' + p.color" loading="lazy" />
+            </div>
+            <p class="card-brand">Apple</p>
+            <h3 class="card-name">{{ p.name }}</h3>
+            <p class="card-config">{{ p.storage }} · {{ p.color }}</p>
+
+            <ul class="card-specs">
+              @for (s of p.spec; track s.label) {
+                <li><span>{{ s.label }}</span><span>{{ s.value }}</span></li>
+              }
+            </ul>
+
+            <div class="card-footer">
+              <div>
+                <p class="card-from">A partir de</p>
+                <p class="price card-price">{{ formatPrice(p.price) }}</p>
+                <p class="card-installment">{{ p.installment }}</p>
+              </div>
+              <a href="#contato" class="btn btn-ghost card-cta">Consultar</a>
+            </div>
+          </article>
+        }
+      </div>
+    }
+
+    <!-- SEMINOVOS: iPhones usados com saúde da bateria -->
+    @if (active() === 'Seminovos') {
+      <p class="tab-sub">Aparelhos revisados, com saúde de bateria informada e garantia da loja.</p>
+      <div class="grid compact-grid">
+        @for (p of seminovos; track p.id) {
+          <article class="mini-card">
+            @if (p.image) {
+              <div class="mini-visual">
+                <img [src]="p.image" [alt]="p.name" loading="lazy" />
+              </div>
+            }
+            <div class="mini-card-top">
+              <h3 class="mini-name">{{ p.name }}</h3>
+              <span class="mini-storage">{{ p.storage }}</span>
+            </div>
+            <div class="battery-row">
+              <span class="battery-icon" aria-hidden="true"></span>
+              <span>Saúde da bateria: <strong>{{ p.batteryHealth }}</strong></span>
+            </div>
+            <div class="mini-footer">
+              <div>
+                <p class="card-from">À vista</p>
+                <p class="price mini-price">{{ formatPrice(p.price) }}</p>
+                <p class="card-installment">{{ p.installment }}</p>
+              </div>
+              <a href="#contato" class="btn btn-ghost card-cta">Consultar</a>
+            </div>
+          </article>
+        }
+      </div>
+      <p class="fine-print">Parcelamento em até 12x no cartão. Valores das parcelas já com juros.</p>
+    }
+
+    <!-- XIAOMI: Xiaomi / POCO / Realme lacrados, com foto real -->
+    @if (active() === 'Xiaomi') {
+      <p class="tab-sub">Xiaomi, POCO e Realme lacrados, com garantia.</p>
+      <div class="grid photo-grid">
+        @for (p of xiaomi; track p.id) {
+          <article class="card">
+            @if (p.note) {
+              <span class="tag">{{ p.note }}</span>
+            }
+            @if (p.image) {
+              <div class="card-visual">
+                <img [src]="p.image" [alt]="p.name" loading="lazy" />
+              </div>
+            }
+            <p class="card-brand">{{ p.brand }}</p>
+            <h3 class="card-name">{{ p.name }}</h3>
+            <p class="card-config">{{ formatAndroidLine(p) }}</p>
+
+            <div class="card-footer">
+              <div>
+                <p class="card-from">A partir de</p>
+                <p class="price card-price">{{ formatPrice(p.price) }}</p>
+                <p class="card-installment">{{ p.installment }}</p>
+              </div>
+              <a href="#contato" class="btn btn-ghost card-cta">Consultar</a>
+            </div>
+          </article>
+        }
+      </div>
+    }
+
+    <!-- SAMSUNG: lacrados, com foto real -->
+    @if (active() === 'Samsung') {
+      <p class="tab-sub">Samsung lacrado, com garantia.</p>
+      <div class="grid photo-grid">
+        @for (p of samsung; track p.id) {
+          <article class="card">
+            @if (p.note) {
+              <span class="tag">{{ p.note }}</span>
+            }
+            @if (p.image) {
+              <div class="card-visual">
+                <img [src]="p.image" [alt]="p.name + ' ' + p.color" loading="lazy" />
+              </div>
+            }
+            <p class="card-brand">{{ p.brand }}</p>
+            <h3 class="card-name">{{ p.name }}</h3>
+            <p class="card-config">{{ formatAndroidLine(p) }}</p>
+
+            <div class="card-footer">
+              <div>
+                <p class="card-from">A partir de</p>
+                <p class="price card-price">{{ formatPrice(p.price) }}</p>
+                <p class="card-installment">{{ p.installment }}</p>
+              </div>
+              <a href="#contato" class="btn btn-ghost card-cta">Consultar</a>
+            </div>
+          </article>
+        }
+      </div>
+    }
+
+    <!-- ACESSÓRIOS: com foto real -->
+    @if (active() === 'Acessórios') {
+      <p class="tab-sub">Carregadores, capas, cabos, fones e muito mais para o seu celular.</p>
+      <div class="grid photo-grid">
+        @for (p of acessorios; track p.id) {
+          <article class="card">
+            <div class="card-visual">
+              <img [src]="p.image" [alt]="p.name" loading="lazy" />
+            </div>
+            <p class="card-brand">{{ p.category }}</p>
+            <h3 class="card-name">{{ p.name }}</h3>
+            <p class="card-config">{{ p.detail }}</p>
+
+            <div class="card-footer">
+              <div>
+                <p class="card-from">À vista</p>
+                <p class="price card-price">{{ formatPrice(p.price) }}</p>
+                <p class="card-installment">{{ p.installment }}</p>
+              </div>
+              <a href="#contato" class="btn btn-ghost card-cta">Consultar</a>
+            </div>
+          </article>
+        }
+      </div>
+      <p class="fine-print">Parcelamento em até 12x no cartão. Valores das parcelas já com juros.</p>
+    }
+  </div>
+</section>

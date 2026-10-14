@@ -1,0 +1,70 @@
+<section id="contato" class="contact signal-field">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <span class="eyebrow">Contato</span>
+      <h2 class="contact-title">Fale com a Central</h2>
+      <p class="contact-sub">
+        Tire dúvidas sobre um modelo, peça uma reserva ou negocie sua troca.
+        Respondemos rápido pelo WhatsApp em horário comercial.
+      </p>
+
+      <div class="channel-list">
+        <a class="channel" href="https://wa.me/5583981024384" target="_blank" rel="noopener">
+          <span class="channel-label">WhatsApp</span>
+          <span class="channel-value">(83) 98102-4384</span>
+        </a>
+        <a class="channel" href="tel:+5583981024384">
+          <span class="channel-label">Telefone</span>
+          <span class="channel-value">(83) 98102-4384</span>
+        </a>
+        <a class="channel" href="mailto:centraldoscelulares@icloud.com">
+          <span class="channel-label">E-mail</span>
+          <span class="channel-value">centraldoscelulares&#64;icloud.com</span>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="submit()">
+      @if (sent()) {
+        <div class="success-banner" role="status">
+          Direcionamos você para o nosso WhatsApp com todas as informações — seguiremos o atendimento por lá.
+        </div>
+      }
+
+      <label class="field">
+        <span>Nome</span>
+        <input type="text" formControlName="name" placeholder="Seu nome completo" />
+        @if (form.controls.name.invalid && form.controls.name.touched) {
+          <small class="error">Informe seu nome.</small>
+        }
+      </label>
+
+      <label class="field">
+        <span>WhatsApp / telefone</span>
+        <input type="tel" formControlName="phone" placeholder="(83) 90000-0000" />
+        @if (form.controls.phone.invalid && form.controls.phone.touched) {
+          <small class="error">Informe um telefone de contato.</small>
+        }
+      </label>
+
+      <label class="field">
+        <span>Modelo de interesse</span>
+        <select formControlName="interest">
+          <option>iPhone 17 Pro Max</option>
+          <option>iPhone 17 Pro</option>
+          <option>iPhone 17</option>
+          <option>iPhone 16</option>
+          <option>iPhone 15</option>
+          <option>Outro / não sei ainda</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Mensagem (opcional)</span>
+        <textarea formControlName="message" rows="3" placeholder="Cor, armazenamento, forma de pagamento..."></textarea>
+      </label>
+
+      <button class="btn btn-primary submit-btn" type="submit">Enviar mensagem</button>
+    </form>
+  </div>
+</section>

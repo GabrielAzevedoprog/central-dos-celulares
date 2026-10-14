@@ -1,0 +1,40 @@
+<section id="topo" class="hero signal-field">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        Seu próximo <em>iPhone</em> está na Central.
+      </h1>
+      <p class="hero-sub">
+        Celulares, iPhones e acessórios com procedência garantida e
+        assistência técnica especializada. Tudo em um só lugar,
+        no Lago Business Center, em Campina Grande.
+      </p>
+      <div class="hero-actions">
+        <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+        <a href="#loja" class="btn btn-ghost">Como chegar até a loja</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-num">Lacrados</span>
+          <span class="trust-label">com 1 ano de garantia Apple</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">24x</span>
+          <span class="trust-label">de parcelamento no cartão</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">Suporte</span>
+          <span class="trust-label">vitalício</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-showcase" #showcase [class.in-view]="showcaseInView()" aria-hidden="true">
+      <img
+        src="assets/hero/iphones-4-capa.webp"
+        alt="iPhone 17 Pro nas cores Prata, Laranja-cósmico e Azul-intenso"
+        class="showcase-img"
+      />
+    </div>
+  </div>
+</section>

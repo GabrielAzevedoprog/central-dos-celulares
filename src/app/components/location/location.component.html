@@ -1,0 +1,40 @@
+<section id="loja" class="location">
+  <div class="container location-grid">
+    <div class="map-frame">
+      <iframe
+        title="Mapa até a loja Central dos Celulares"
+        src="https://www.google.com/maps?q=-7.2164649,-35.8767771&z=16&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+
+    <div class="location-info">
+      <span class="eyebrow">Loja física</span>
+      <h2 class="location-title">Venha ver de perto</h2>
+      <p class="location-address">
+        Lago Business Center<br />
+        Av. Mal. Floriano Peixoto, 1350 — 4º andar, sala 27<br />
+        Santo Antônio, Campina Grande — PB, CEP 58406-015
+      </p>
+
+      <dl class="hours">
+        @for (h of hours; track h.day) {
+          <div class="hours-row">
+            <dt>{{ h.day }}</dt>
+            <dd>{{ h.time }}</dd>
+          </div>
+        }
+      </dl>
+
+      <a
+        class="btn btn-ghost"
+        href="https://maps.app.goo.gl/9A2GhRAPke176ZDS6"
+        target="_blank"
+        rel="noopener"
+      >
+        Abrir rota no Google Maps
+      </a>
+    </div>
+  </div>
+</section>
